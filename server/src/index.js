@@ -1,9 +1,22 @@
 import dotenv from "dotenv";
 import connecDb from "./db/index.js";
+import { app } from "./app.js";
 
 dotenv.config();
 
-connecDb();
+connecDb()
+.then(()=>{
+    app.on("error", ()=>{
+        console.log("db connected but error while communicating with db", error);
+    });
+
+    app.listen(process.env.PORT || 8000, ()=>{
+        console.log(`server started at port ${process.env.PORT}`);
+    });
+})
+.catch((err)=>{
+    console.log("connection with db failed", err);
+})
 
 /*
 import express from "express"
