@@ -30,7 +30,7 @@ This project focuses on **clean architecture, modular design, and production-gra
 
 ## 🏗️ System Architecture
 
-![Architecture](server/Architecture/architecture.png)
+![Architecture](server/Architecture/Architecture.png)
 
 ---
 
@@ -47,7 +47,7 @@ This project focuses on **clean architecture, modular design, and production-gra
 ---
 
 ## 🧩 Project Structure
-
+```
 server/
 ├── src/
 │ ├── controllers/ # Handles incoming requests
@@ -58,7 +58,7 @@ server/
 │ ├── utils/ # Helper functions
 │ ├── db/ # Database configuration
 │ └── app.js # App configuration
-
+```
 
 ---
 
