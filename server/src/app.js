@@ -22,4 +22,21 @@ app.use(express.static("public")); // serves static files like images, css, js e
 
 app.use(cookieParser()); // handles cookies safely with encreption only server can add or remove
 
+app.use((err, req, res, next)=>{
+    console.error(err);
+    res.status(500).json({
+        success: false,
+        message: err.message || "something went wrong",
+    });
+})
+
+
+// import routers 
+
+import userRouter from "./routes/user.routes.js";
+
+
+// routes declaration
+app.use("/api/v1/users", userRouter);
+
 export { app }
